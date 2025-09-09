@@ -9,7 +9,7 @@ const registerFunction = async (req, res) => {
   try {
     const newCustomer = new Customer(req.body);
     await newCustomer.save();
-    res.redirect(`/profile?id=${newCustomer._id}`); // pass ID
+    res.redirect(`/user/profile?id=${newCustomer._id}`); // pass ID
   } catch (err) {
     console.error(err);
     res.status(500).send("Error registering user.");
