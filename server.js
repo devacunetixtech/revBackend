@@ -1,6 +1,8 @@
 const express = require('express');
 const app = express();
-const PORT = process.env.PORT || 3832;
+require('dotenv').config(); 
+// const PORT = process.env.PORT;
+// const URI = process.env.URI;
 require('ejs')
 app.set('view engine', 'ejs')
 // Middleware
@@ -52,7 +54,7 @@ let allCustomers = [];
 
 
 
-mongoose.connect(uri)
+mongoose.connect(process.env.URI)
 .then(() => {
   console.log("✅ Connected to MongoDB");
 })
@@ -60,6 +62,6 @@ mongoose.connect(uri)
   console.error("❌ Error connecting to MongoDB:", err);
 });
 // Start server
-app.listen(PORT, () => {
-    console.log(`Server started at ${PORT}`);
+app.listen(process.env.PORT, () => {
+    console.log(`Server started at ${process.env.PORT}`);
 });
