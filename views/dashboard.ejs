@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f4f4; margin: 0; }
+        .container { max-width: 800px; margin: 40px auto; background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);}
+        h1 { color: #333; }
+        .card { background: #e9ecef; padding: 20px; border-radius: 6px; margin-top: 20px; }
+        .card p { margin: 5px 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome, <%= customer.firstName %>!</h1>
+
+        <div class="card">
+            <h2>Your Details</h2>
+            <p><strong>First Name:</strong> <%= customer.firstName %></p>
+            <p><strong>Last Name:</strong> <%= customer.lastName %></p>
+            <p><strong>Email:</strong> <%= customer.email %></p>
+        </div>
+    </div>
+</body>
+</html>
